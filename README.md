@@ -23,9 +23,3 @@ Start the app in the `dev` environment:
 ```bash
 npm run start
 ```
-
-фильтр на удаленный
-пейлоды
-
-галочки
-кнопочки
