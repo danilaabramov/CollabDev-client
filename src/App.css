@@ -1,0 +1,583 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+    background: #171717;
+    overflow-x: hidden;
+    font-size: 16px;
+}
+
+.logo, .button-bar, .register-link, .registration-form h1,
+.button-submit, .user-image, .user-tab, .user-tab-active, .button-not-submit {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+                                     supported by Chrome, Edge, Opera and Firefox */
+}
+
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-text-fill-color: #fff;
+    -webkit-box-shadow: 0 0 0 1000px #1B1B1C inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.App {
+    min-height: 100vh;
+}
+
+main {
+    padding-top: 71px;
+}
+
+li {
+    display: flex;
+}
+
+ul {
+    padding: 0;
+}
+
+header {
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    background-color: #202020;
+    height: 70px;
+    width: 100vw;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    position: fixed;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.button-bar:hover {
+    background: #1B1B1C;
+    color: #175BDD;
+}
+
+.button-bar {
+    border-radius: 10px;
+    display: flex;
+    gap: 5px;
+    justify-content: left;
+    align-items: center;
+    padding: 10px;
+    color: #fff;
+    height: 25px;
+    margin-bottom: 10px;
+    transition: width .1s linear;
+    cursor: pointer;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 24px;
+    margin-left: 20px;
+    color: #fff;
+}
+
+.main-header-container {
+    width: calc(100vw - 360px);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1%
+}
+
+.header-container {
+    height: 71px;
+    align-items: center;
+    display: flex;
+}
+
+.top-mobile-buttons {
+    width: 100vw;
+    justify-content: center;
+    display: flex;
+    opacity: 0;
+    transition: opacity .1s;
+}
+
+.top-active-mobile-buttons {
+    width: 100vw;
+    justify-content: center;
+    display: flex;
+    opacity: 0;
+}
+
+.team-vacancy-card {
+    max-width: 800px;
+    width: 100%;
+    margin-bottom: 20px;
+    background: #262626;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 40px;
+    color: #fff;
+}
+
+.team-vacancy-card-title-container {
+    display: flex
+}
+
+.team-vacancy-card-title, .team-vacancy-card-description {
+    display: flex;
+    z-index: 0;
+    word-break: break-all
+}
+
+.team-vacancy-card-title h2 {
+    margin: 0;
+    cursor: pointer;
+    color: #fff;
+}
+
+.team-vacancy-card-title h2:hover, .team-vacancy-card-type:hover {
+    text-decoration: underline;
+}
+
+.skeleton-vacancy-card {
+    max-width: 800px;
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    color: #fff
+}
+
+.team-vacancy-card-image {
+    flex: 0 0 200px;
+}
+
+.team-vacancy-card-image img {
+    width: 100%;
+    height: auto;
+}
+
+.team-vacancy-card-stack-list {
+    font-size: 16px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.team-vacancy-card-stack-item {
+    background-color: #1B1B1C;
+    padding: 8px;
+    color: #175BDD;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 1px
+}
+
+.team-vacancy-card-stack-item:hover {
+    background-color: #1f1f1f;
+    border: 1px solid gray;
+    margin: 0
+}
+
+.registration-form {
+    max-width: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 36px;
+    padding: 40px;
+    background-color: #262626;
+    border-radius: 20px;
+    align-items: center;
+}
+
+.registration-form h1 {
+    margin-top: 0;
+    color: #fff;
+    text-align: center;
+}
+
+.registration-form__group, .active-registration-form__group {
+    background-color: #1B1B1C;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    width: calc(100% - 4px);
+    border-radius: 10px;
+    padding: 2px;
+}
+
+.active-registration-form__group {
+    border: 2px solid blue;
+    padding: 0;
+}
+
+.registration-form__label {
+    padding: 9px;
+    opacity: .5;
+    font-size: 14px;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    cursor: text;
+    color: #fff;
+    border-radius: 20px;
+}
+
+.registration-form__input {
+    padding: 0 9px 9px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: 0;
+    background-color: #1B1B1C;
+    color: #fff;
+    font-size: 16px;
+}
+
+.registration-form__input:focus {
+    outline: none !important;
+}
+
+.register-link {
+    margin-top: 20px;
+    color: #175BDD;
+}
+
+.register-link:hover {
+    text-decoration: underline;
+}
+
+.button-submit, .button-not-submit {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #175BDD;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    height: 60px;
+    font-size: 18px;
+}
+
+.button-submit:hover {
+    background-color: #004e92;
+}
+
+.button-not-submit {
+    background: #333
+}
+
+.button-not-submit:hover {
+    background: #222
+}
+
+.main-right-container {
+    margin-top: 20px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    display: flex;
+    min-height: calc(100vh - 91px);
+    width: calc(50vw + 360px);
+    padding-right: 20px;
+}
+
+.main-container {
+    max-width: 800px;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}
+
+.team-vacancy-card-type {
+    color: #888;
+    cursor: pointer;
+}
+
+.add-project-stack-item {
+    width: 100%;
+    display: block;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.add-project-stack-item:hover {
+    background-color: #2F2F2F
+}
+
+.menu-left {
+    margin-left: 20px;
+    cursor: pointer
+}
+
+.left-header-container {
+    display: flex
+}
+
+.right-header-container {
+    justify-content: right;
+    display: flex;
+    padding-right: 20px;
+    cursor: pointer
+}
+
+.icon-button-bar {
+    width: 25px;
+    display: flex
+}
+
+.text-button-bar {
+    margin-left: 10px;
+    overflow: hidden
+}
+
+.text-container-button-bar {
+    width: 100vw;
+}
+
+.user-profile {
+    background: #1d1d1d;
+    justify-content: center;
+    padding: 20px 20px 0;
+    color: #fff;
+    width: 100%;
+    border-radius: 20px;
+    max-width: 800px;
+    overflow: hidden;
+    min-height: calc(100vh - 131px);
+    margin-bottom: 20px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-image {
+    position: relative;
+    width: calc(40% - 10px);
+    padding-bottom: calc(40% - 10px);
+    margin-right: 10px;
+}
+
+.user-image img {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    object-fit: cover;
+    border-radius: 100%;
+    padding: 10px;
+}
+
+.option-btn {
+    background: #333;
+}
+
+.option-btn:hover {
+    background: #2b2b2b;
+}
+
+.my-component {
+    width: 50%;
+    padding-top: 50%; /* задаем высоту в процентах, равную ширине */
+    position: relative; /* нужно для позиционирования внутренних элементов */
+}
+
+.my-component p {
+    position: absolute; /* задаем абсолютное позиционирование */
+    top: 50%; /* перемещаем текст на половину высоты компонента */
+    transform: translateY(-50%); /* выравниваем текст по центру */
+}
+
+.user-details {
+    width: 60%;
+    margin-left: 10px;
+}
+
+.user-details h2 {
+    font-size: 2rem;
+    margin: 0
+}
+
+.user-details h3 {
+    color: #586069;
+    font-size: 1.2rem;
+    margin: 0
+}
+
+.user-details p {
+    margin-top: 1rem;
+}
+
+.user-stats {
+    display: flex;
+    margin-top: 10px;
+}
+
+.user-tab, .user-tab-active {
+    cursor: pointer;
+    width: 50%;
+    height: 40px;
+    margin: 20px 0;
+    background: #202020;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 40px;
+    color: #aaa
+}
+
+.user-tab-active {
+    background: #262626;
+    color: #fff
+}
+
+.user-tab:hover, .user-tab-active:hover {
+    background: #303030;
+}
+
+.user-stats div {
+    margin-right: 2px;
+    /*width: calc(33% - 2px);*/
+    font-size: 16px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+}
+
+.user-stats strong {
+    display: block;
+    font-size: 20px;
+}
+
+.left-bar {
+    width: calc(50vw - 390px);
+    justify-content: flex-end;
+    transition: min-width .1s linear;
+}
+
+.left-bar-container {
+    margin: 10px;
+    max-height: calc(100vh - 71px);
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-y: scroll;
+}
+
+.left-bar-container::-webkit-scrollbar {
+    display: none;
+}
+
+.main {
+    display: flex;
+    gap: 10px
+}
+
+@media (max-width: 730px) {
+    header {
+        transition: height .1s;
+    }
+
+    .active-header {
+        height: 100vh;
+        transition: height .1s;
+        border-radius: 0;
+    }
+
+    .top-active-mobile-buttons {
+        opacity: 1;
+        transition: opacity .1s;
+    }
+
+    .left-bar {
+        display: none;
+    }
+
+    .main-right-container {
+        justify-content: center;
+        width: calc(100vw - 20px);
+        margin: 20px 20px 0;
+        padding: 0;
+    }
+
+    .registration-form {
+        align-items: center;
+        margin: 0 auto 36px;
+    }
+}
+
+@media (max-width: 510px) {
+    .main-right-container {
+        margin: 10px 10px 0;
+    }
+
+    .user-details h2 {
+        font-size: 1.5rem;
+    }
+
+    .user-details h3 {
+        font-size: 1rem;
+    }
+
+    .team-vacancy-card {
+        padding: 20px;
+        margin-bottom: 10px;
+    }
+
+    .user-profile {
+        padding: 10px 10px 0;
+        margin-bottom: 10px;
+        min-height: calc(100vh - 101px);
+    }
+
+    .user-stats div {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 450px) {
+    .registration-form {
+        padding: 20px 10px;
+    }
+}
+
+@media (max-width: 375px) {
+    .user-details h2 {
+        font-size: 1.2rem;
+    }
+
+    .user-details h3 {
+        font-size: 0.8rem;
+    }
+
+    .user-stats div {
+        font-size: 8px;
+    }
+}
