@@ -282,6 +282,8 @@ header {
     margin-top: 20px;
     height: 60px;
     font-size: 18px;
+    text-align: center;
+    line-height: 40px;
 }
 
 .button-submit:hover {
@@ -294,6 +296,10 @@ header {
 
 .button-not-submit:hover {
     background: #222
+}
+
+.not-active:hover {
+    background: #333
 }
 
 .main-right-container {

@@ -99,8 +99,8 @@ const projectsSlice = createSlice({
         }, [fetchAllProjects.rejected]: (state) => {
             state.projects.status = "error";
         }, [fetchCreateProject.fulfilled]: (state, action) => {
-            state.projects.items = [action.payload, ...state.projects.items];
-            state.meProjects.items = [action.payload, ...state.meProjects.items];
+            if(state.projects.items) state.projects.items = [action.payload, ...state.projects.items];
+            if(state.meProjects.items) state.meProjects.items = [action.payload, ...state.meProjects.items];
         }, [fetchCreateProject.rejected]: (state) => {
             state.projects.status = "error";
         }, [fetchAllTypes.pending]: (state) => {
@@ -125,7 +125,6 @@ const projectsSlice = createSlice({
         }, [fetchDeleteProject.fulfilled]: (state, action) => {
 
         }, [fetchUpdateProject.fulfilled]: (state, action) => {
-            console.log(action)
             state.customProject.items = action.payload
             let i = state.projects.items.map((item, index) => item.id === action.payload.id ? index : false)
                 .filter(item => item !== false);

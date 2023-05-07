@@ -64,7 +64,9 @@ export default function AddProjectPage() {
         }
     }, [location])
 
-    const handlePostChange = async () => {
+
+
+    const handlePostChange = () => {
         setLoading(true)
         if (location.state) {
             dispatch(fetchUpdateProject({
@@ -76,14 +78,14 @@ export default function AddProjectPage() {
                 project_type: types.items[activeType].title
             })).finally(() => {
                 setLoading(false)
-                navigate(`/projects/${location.state.id}`)
+                navigate(`/project/${location.state.id}`)
             })
         } else {
             dispatch(fetchCreateProject({
                 title, description, skills: addSkills, soft_delete: false, project_type: types.items[activeType].title
             })).finally(() => {
                 setLoading(false)
-                navigate(`/`)
+                navigate(`/}`)
             })
         }
     };

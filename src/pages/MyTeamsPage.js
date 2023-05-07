@@ -24,7 +24,7 @@ export default function MyTeamsPage() {
     if (!window.localStorage.getItem("token_refresh") || IsAuthError) return <Navigate to='/login'/>
 
     return (<div style={{width: '100%'}}>
-        {IsMeProjectsLoaded ? meProjects.items.map((project, index) => <section className="main-container" key={index}>
+        {IsMeProjectsLoaded ? meProjects.items.map((project, index) => <section className="main-container" key={project.id}>
             <TeamVacancyCard
                 user={project?.users[0]}
                 {...project}

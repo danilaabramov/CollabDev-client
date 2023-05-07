@@ -17,7 +17,7 @@ export default function HomePage() {
 
     return (<div style={{width: '100%'}}>
         {IsProjectsLoaded ? projects.items
-            .map((project, index) => <section className="main-container" key={index}>
+            .map((project, index) => <section className="main-container" key={project.id}>
                 <TeamVacancyCard
                     user={project?.users[0]}
                     {...project}

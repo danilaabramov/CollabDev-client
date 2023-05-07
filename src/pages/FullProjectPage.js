@@ -20,6 +20,7 @@ export default function FullProjectPage() {
     const [project, setProject] = useState()
 
     useEffect(() => {
+        // setProject(null)
         const asyncFn = async () => {
             const {payload} = await dispatch(fetchOneProject(id.split('-')[0]));
             if (payload?.id) {

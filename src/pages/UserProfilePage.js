@@ -32,7 +32,9 @@ export default function UserProfilePage() {
         }
     };
 
-    useEffect(() => IsAuth && !IsMeProjectsLoaded && dispatch(fetchMeProjects(data.user.username)), [IsAuth])
+    useEffect(() => {
+        IsAuth && !IsMeProjectsLoaded && dispatch(fetchMeProjects(data.user.username))
+    }, [IsAuth])
 
     useEffect(() => {
         window.scrollTo(0, 0);
